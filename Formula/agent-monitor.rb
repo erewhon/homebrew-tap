@@ -11,14 +11,14 @@ class AgentMonitor < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/erewhon/agent-monitor/releases/download/v0.6.0/agent-monitor_darwin_arm64.tar.gz"
-      sha256 "f98f70a7870ee4330ff5beb2da022537b2fb5b963cebbcdeda0f8c3bc7ac0d7b"
+      sha256 "097459d8573ed69bf1ea39e03cb4c3df8a1f6e00455490061bd6424d296b4335"
 
       def install
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
         bin.install "focus-agent-monitor"
         bin.install "agent-monitor-placeholder"
-        etc.install "tmux-outer.conf" => "agent-monitor/tmux-outer.conf"
+        (etc/"agent-monitor").install "tmux-outer.conf"
       end
     end
   end
@@ -26,24 +26,24 @@ class AgentMonitor < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/erewhon/agent-monitor/releases/download/v0.6.0/agent-monitor_linux_amd64.tar.gz"
-      sha256 "77bf3e238563fce2a0e18afb5adde38c8f8aa24838a815212b53f17cfa7ca3e2"
+      sha256 "4056d20567e856bb63fc0e5437ecd30037b740ff3758d2767b0ba9228ab08838"
       def install
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
         bin.install "focus-agent-monitor"
         bin.install "agent-monitor-placeholder"
-        etc.install "tmux-outer.conf" => "agent-monitor/tmux-outer.conf"
+        (etc/"agent-monitor").install "tmux-outer.conf"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/erewhon/agent-monitor/releases/download/v0.6.0/agent-monitor_linux_arm64.tar.gz"
-      sha256 "4d3b9c37f47f52c71e33efa387e4ddd97f56a79749009a918fedf4683c192dbf"
+      sha256 "fca32dc01ac8a153723c4b193270060b7218fb2f85c1a81597aa72dc90161951"
       def install
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
         bin.install "focus-agent-monitor"
         bin.install "agent-monitor-placeholder"
-        etc.install "tmux-outer.conf" => "agent-monitor/tmux-outer.conf"
+        (etc/"agent-monitor").install "tmux-outer.conf"
       end
     end
   end
