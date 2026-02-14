@@ -5,13 +5,13 @@
 class AgentMonitor < Formula
   desc "TUI for tracking Claude Code agents in tmux sessions"
   homepage "https://github.com/erewhon/agent-monitor"
-  version "0.13.2"
+  version "0.13.3"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/erewhon/agent-monitor/releases/download/v0.13.2/agent-monitor_darwin_arm64.tar.gz"
-      sha256 "abd2d174ec32dd42db62bd8d074a59918144f8e7ed11c2fc0ced990d22d6dfe5"
+      url "https://github.com/erewhon/agent-monitor/releases/download/v0.13.3/agent-monitor_darwin_arm64.tar.gz"
+      sha256 "2e2f5734339b20cd142920b60c45ecb24aa26e849f028d6284234b8842a0c17c"
 
       def install
         bin.install "agent-monitor"
@@ -25,8 +25,8 @@ class AgentMonitor < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/agent-monitor/releases/download/v0.13.2/agent-monitor_linux_amd64.tar.gz"
-      sha256 "34a3a18913f606984fded1c7804bb6b43b839120f2df58a0a4ddc693c873000c"
+      url "https://github.com/erewhon/agent-monitor/releases/download/v0.13.3/agent-monitor_linux_amd64.tar.gz"
+      sha256 "2a6a45ec2f1ee9673138588f19192d416b6b07ff843cb422bd82215959f30495"
       def install
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
@@ -36,8 +36,8 @@ class AgentMonitor < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/agent-monitor/releases/download/v0.13.2/agent-monitor_linux_arm64.tar.gz"
-      sha256 "2e24f562d6c7c338502ade7dc5c6d73871d482b81180382eb141c3852699c445"
+      url "https://github.com/erewhon/agent-monitor/releases/download/v0.13.3/agent-monitor_linux_arm64.tar.gz"
+      sha256 "0556208731fca109c1537a533d3b0e6e4a5f29d2b0b0926268e18571d81ba178"
       def install
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
