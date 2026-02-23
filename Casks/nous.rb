@@ -1,6 +1,6 @@
 cask "nous" do
   version "2026.2.23"
-  sha256 "c5fc6cdcf0622f77d96cf8e76ae7ad96a07d93b8ee760d4c3199d17edd7e2ff7"
+  sha256 "9357c7a46b83b28d3e1bf7cedd8bcad88b212ec3cd36ad83eed83d6402805655"
 
   url "https://github.com/erewhon/nous/releases/download/v2026.2.23/Nous_2026.2.0_aarch64.dmg"
   name "Nous"
