@@ -5,15 +5,15 @@
 class AgentMonitor < Formula
   desc "TUI for tracking Claude Code agents in tmux sessions"
   homepage "https://github.com/erewhon/agent-monitor"
-  version "0.18.6"
+  version "0.19.0"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/erewhon/agent-monitor/releases/download/v0.18.6/agent-monitor_darwin_arm64.tar.gz"
-      sha256 "5aae720d121a34094b0500aaa3232ecee29887408eb461cc0f9357dcbc4a022c"
+      url "https://github.com/erewhon/agent-monitor/releases/download/v0.19.0/agent-monitor_darwin_arm64.tar.gz"
+      sha256 "7f5014958532445679f16db8caefe443fa70c9b9468893a420d168f25f77c058"
 
-      def install
+      define_method(:install) do
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
         bin.install "focus-agent-monitor"
@@ -25,9 +25,9 @@ class AgentMonitor < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/agent-monitor/releases/download/v0.18.6/agent-monitor_linux_amd64.tar.gz"
-      sha256 "1b41e1113fe641261c0f0e4a445b7cb9d8357d0ac990f819ff04f045eff676bd"
-      def install
+      url "https://github.com/erewhon/agent-monitor/releases/download/v0.19.0/agent-monitor_linux_amd64.tar.gz"
+      sha256 "72558dc079a70d5bbc2601c82fd9561284ab942edd5c13248dfa19cdc9600b67"
+      define_method(:install) do
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
         bin.install "focus-agent-monitor"
@@ -36,9 +36,9 @@ class AgentMonitor < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/agent-monitor/releases/download/v0.18.6/agent-monitor_linux_arm64.tar.gz"
-      sha256 "7140dcae29c563c37160152aa0ea017f590884594ee056aa62438ed88e658973"
-      def install
+      url "https://github.com/erewhon/agent-monitor/releases/download/v0.19.0/agent-monitor_linux_arm64.tar.gz"
+      sha256 "95e3971265faf5c39f1471449f8bc633748bd1bd1651048f63570a37c9785555"
+      define_method(:install) do
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
         bin.install "focus-agent-monitor"
