@@ -1,30 +1,30 @@
 class Protectinator < Formula
   desc "Portable, zero-config security monitoring tool"
   homepage "https://github.com/erewhon/protectinator"
-  version "0.5.0"
+  version "2026.3.28"
   license "MIT OR Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/erewhon/protectinator/releases/download/v0.5.0/protectinator-macos-arm64"
-      sha256 "2febc825764cfa0a68f2c33e8a201b2de598deb899b9fa1f85eaf7c24c4cc38a"
+      url "https://github.com/erewhon/protectinator/releases/download/v2026.3.28/protectinator-macos-arm64"
+      sha256 "ac7407c71ceeda3490bbdd69df07a1f7b4f09eae4172e3308a29d9d557594451"
     end
 
     on_intel do
-      url "https://github.com/erewhon/protectinator/releases/download/v0.5.0/protectinator-macos-x86_64"
-      sha256 "67699afcd23532a2f339200b160fd6aed736f0b8b5f86b087de36ee1bbe9dc7d"
+      url "https://github.com/erewhon/protectinator/releases/download/v2026.3.28/protectinator-macos-x86_64"
+      sha256 "dee806c631434480a69c4651f0b9f13eccf2e4b3dab525b9104b5cee98b20b39"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/erewhon/protectinator/releases/download/v0.5.0/protectinator-linux-arm64"
-      sha256 "03e36e5f158c2ccef472fc740d451a2a23f8d38b4e6bbe912c8edc60b316c97b"
+      url "https://github.com/erewhon/protectinator/releases/download/v2026.3.28/protectinator-linux-arm64"
+      sha256 "3871e95643acf96284c6321b8df24548b601230f668015bc295dbdb94320b82e"
     end
 
     on_intel do
-      url "https://github.com/erewhon/protectinator/releases/download/v0.5.0/protectinator-linux-x86_64"
-      sha256 "4a161eb264cd5a6d75c1db8d61f98e3796f9d9e85801b7e8c25b21fa0c0639c9"
+      url "https://github.com/erewhon/protectinator/releases/download/v2026.3.28/protectinator-linux-x86_64"
+      sha256 "935c8adeda4a4e6f32eee52cfe8979526a3979e280bc14ab5cfd0c1874ce359f"
     end
   end
 
