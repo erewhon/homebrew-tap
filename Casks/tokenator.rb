@@ -34,9 +34,9 @@ cask "tokenator" do
 
   binary "tokenator"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/tokenator"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "tokenator"], chdir: "."
     end
   end
 
