@@ -5,60 +5,55 @@
 class AgentMonitor < Formula
   desc "TUI for tracking Claude Code agents in tmux sessions"
   homepage "https://github.com/erewhon/agent-monitor"
-  version "0.34.1"
+  version "0.35.0"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/erewhon/agent-monitor/releases/download/v0.34.1/agent-monitor_darwin_arm64.tar.gz"
-      sha256 "7957463268208e1e74260862e61fa4100953409da94498ab8731b29b3005afe6"
+      url "https://github.com/erewhon/agent-monitor/releases/download/v0.35.0/agent-monitor_darwin_arm64.tar.gz"
+      sha256 "78b000c482c420cc3c95054ef2c0603203a79f2c525ea4a323b1f02f115e4b99"
 
       define_method(:install) do
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
         bin.install "focus-agent-monitor"
         bin.install "agent-monitor-placeholder"
-        (etc/"agent-monitor").install "tmux-outer.conf"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/agent-monitor/releases/download/v0.34.1/agent-monitor_linux_amd64.tar.gz"
-      sha256 "ec75ffa30befce523f8420450e92974548d1a832e927654a735025434047bee8"
+      url "https://github.com/erewhon/agent-monitor/releases/download/v0.35.0/agent-monitor_linux_amd64.tar.gz"
+      sha256 "eb5d710b4b76a929fb6ee1946c8a2eef9daaa7e0796978e89b5071faf600ba3c"
       define_method(:install) do
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
         bin.install "focus-agent-monitor"
         bin.install "agent-monitor-placeholder"
-        (etc/"agent-monitor").install "tmux-outer.conf"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/agent-monitor/releases/download/v0.34.1/agent-monitor_linux_arm64.tar.gz"
-      sha256 "bed7bf158909e4ef33694b4925c14222da06478ab0b1c49df8c0343aa7f5a44b"
+      url "https://github.com/erewhon/agent-monitor/releases/download/v0.35.0/agent-monitor_linux_arm64.tar.gz"
+      sha256 "e7d5d59180cabb3832690cace3b5430ed906ba9b3d96f8a303f64120d34e4285"
       define_method(:install) do
         bin.install "agent-monitor"
         bin.install "agent-monitor-session"
         bin.install "focus-agent-monitor"
         bin.install "agent-monitor-placeholder"
-        (etc/"agent-monitor").install "tmux-outer.conf"
       end
     end
   end
 
   def caveats
     <<~EOS
-      The tmux config has been installed to:
-        #{etc}/agent-monitor/tmux-outer.conf
-
-      To use the session launcher, you may want to update the config path
-      in agent-monitor-session or copy it to ~/.config/agent-monitor-tmux.conf
+      Run `agent-monitor` in a terminal to open the outer tmux layout. Its
+      tmux config is built in and is written to
+      ~/.config/agent-monitor-tmux.conf on first run; edit it there.
     EOS
   end
 
   test do
-    assert_match "agent-monitor", shell_output("#{bin}/agent-monitor --help 2>&1", 1)
+    assert_match "agent-monitor", shell_output("#{bin}/agent-monitor --help 2>&1")
   end
 end
