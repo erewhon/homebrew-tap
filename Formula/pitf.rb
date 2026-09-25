@@ -5,13 +5,13 @@
 class Pitf < Formula
   desc "One command over the smithy LLM tools: agent-monitor, tokenator, llm-router, benchmarks"
   homepage "https://github.com/erewhon/pitf"
-  version "0.1.6"
+  version "0.1.7"
   license "AGPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.6/pitf_0.1.6_darwin_amd64.tar.gz"
-      sha256 "d82047e2b0aef6e4efaccc1efa5f0719e08a82b5e6758c9d67dfc6a35bfaba57"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.7/pitf_0.1.7_darwin_amd64.tar.gz"
+      sha256 "5fff4a0588ac52fb268208d59d0ac2939d3128ee342f86256b45fa4dd1d6caa0"
 
       define_method(:install) do
         bin.install "pitf"
@@ -22,8 +22,8 @@ class Pitf < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.6/pitf_0.1.6_darwin_arm64.tar.gz"
-      sha256 "54a3ded24b2dd3b879c2e99cbe443b7d6ffb3a36c11819ef461af3449b12f80b"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.7/pitf_0.1.7_darwin_arm64.tar.gz"
+      sha256 "d3f0c9739f9dd54b6c734c35cee03db8d3325a43aae9b9d838f7ea54322736cf"
 
       define_method(:install) do
         bin.install "pitf"
@@ -37,8 +37,8 @@ class Pitf < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.6/pitf_0.1.6_linux_amd64.tar.gz"
-      sha256 "5e1bfa465c87c842d2e88f845610a3be8b088074d3246081246fd0927625d38f"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.7/pitf_0.1.7_linux_amd64.tar.gz"
+      sha256 "043b409ec72f8b2b56855a4801eab54226e8417b1bd7a3ffd551dd353a601683"
       define_method(:install) do
         bin.install "pitf"
         # The Python-tool shims: pitf qual / forge / meta / bench-py. They need
@@ -48,8 +48,8 @@ class Pitf < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.6/pitf_0.1.6_linux_arm64.tar.gz"
-      sha256 "f964cc4bbe5ac91a29c5df4ee6fe9b925cb49d2380f3e2dcf7bfa489157eccc3"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.7/pitf_0.1.7_linux_arm64.tar.gz"
+      sha256 "b1ad6d706e3de8a55c5a42220427c472693bfc9a8f2dd2fc5adf311a38ad6bb1"
       define_method(:install) do
         bin.install "pitf"
         # The Python-tool shims: pitf qual / forge / meta / bench-py. They need
