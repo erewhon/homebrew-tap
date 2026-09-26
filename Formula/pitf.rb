@@ -5,31 +5,25 @@
 class Pitf < Formula
   desc "One command over the smithy LLM tools: agent-monitor, tokenator, llm-router, benchmarks"
   homepage "https://github.com/erewhon/pitf"
-  version "0.1.9"
+  version "0.1.10"
   license "AGPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.9/pitf_0.1.9_darwin_amd64.tar.gz"
-      sha256 "f81749622bbaf7b0dcd2af0e787c11e6c1628699aaffb8e5f5554b442009a413"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.10/pitf_0.1.10_darwin_amd64.tar.gz"
+      sha256 "b021e7bcd9056b6bc2e8bb558689323de80256a5c17703d8e77f4d0844946667"
 
       define_method(:install) do
         bin.install "pitf"
-        # The Python-tool shims: pitf qual / forge / meta / bench-py. They need
-        # uv and the checkouts under ~/code/smithy (or PITF_SMITHY_DIR).
-        bin.install Dir["contrib/wrappers/pitf-*"]
         generate_completions_from_executable(bin/"pitf", "completion")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.9/pitf_0.1.9_darwin_arm64.tar.gz"
-      sha256 "507ad38945330845ee12722cc7225937f0cc57957e55cd87fea8c655f0cc6a04"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.10/pitf_0.1.10_darwin_arm64.tar.gz"
+      sha256 "01627f37ca57b1824e07d03c99b3837222ea56a2d3cd568d270eced8e00cb471"
 
       define_method(:install) do
         bin.install "pitf"
-        # The Python-tool shims: pitf qual / forge / meta / bench-py. They need
-        # uv and the checkouts under ~/code/smithy (or PITF_SMITHY_DIR).
-        bin.install Dir["contrib/wrappers/pitf-*"]
         generate_completions_from_executable(bin/"pitf", "completion")
       end
     end
@@ -37,24 +31,18 @@ class Pitf < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.9/pitf_0.1.9_linux_amd64.tar.gz"
-      sha256 "a502e56e54ffba15ca9ebe4a6a3b041dde8534e9591664e918d5cb90bf277bac"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.10/pitf_0.1.10_linux_amd64.tar.gz"
+      sha256 "0ed8cca3e9550ad6c85a96939b81e9508e7837e039b5de5e66be876e215ddbe2"
       define_method(:install) do
         bin.install "pitf"
-        # The Python-tool shims: pitf qual / forge / meta / bench-py. They need
-        # uv and the checkouts under ~/code/smithy (or PITF_SMITHY_DIR).
-        bin.install Dir["contrib/wrappers/pitf-*"]
         generate_completions_from_executable(bin/"pitf", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.9/pitf_0.1.9_linux_arm64.tar.gz"
-      sha256 "c43a22d8d8527c581cfabfe5e43f770eac0fd838dd21757b10e3267cb3f4abf5"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.10/pitf_0.1.10_linux_arm64.tar.gz"
+      sha256 "2ee1968c0d25559efc82ddc4b9a88a2737118f057387ddf18d883d0402a2c0c5"
       define_method(:install) do
         bin.install "pitf"
-        # The Python-tool shims: pitf qual / forge / meta / bench-py. They need
-        # uv and the checkouts under ~/code/smithy (or PITF_SMITHY_DIR).
-        bin.install Dir["contrib/wrappers/pitf-*"]
         generate_completions_from_executable(bin/"pitf", "completion")
       end
     end
@@ -62,10 +50,10 @@ class Pitf < Formula
 
   def caveats
     <<~EOS
-      Built in: pitf monitor | tokens | router … | bench sweep | session | model | config
-      External (need uv + the Python checkouts on PITF_SMITHY_DIR): pitf qual | forge | meta | bench-py
+      Built in: pitf monitor | tokens | router … | bench sweep | session | model | dashboard | config
+      Python tools (need uv + the checkouts under ~/code/smithy or PITF_SMITHY_DIR): pitf qual | forge | meta
 
-      First run: pitf config init
+      First run: pitf config init, then pitf doctor
     EOS
   end
 end
