@@ -5,13 +5,13 @@
 class Pitf < Formula
   desc "One command over the smithy LLM tools: agent-monitor, tokenator, llm-router, benchmarks"
   homepage "https://github.com/erewhon/pitf"
-  version "0.1.10"
+  version "0.1.11"
   license "AGPL-3.0-or-later"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.10/pitf_0.1.10_darwin_amd64.tar.gz"
-      sha256 "b021e7bcd9056b6bc2e8bb558689323de80256a5c17703d8e77f4d0844946667"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.11/pitf_0.1.11_darwin_amd64.tar.gz"
+      sha256 "0a160c4b1b8e856fbd5e58868b7a3e4cd0c72276bafc3e3aa4b8066bc24a7967"
 
       define_method(:install) do
         bin.install "pitf"
@@ -19,8 +19,8 @@ class Pitf < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.10/pitf_0.1.10_darwin_arm64.tar.gz"
-      sha256 "01627f37ca57b1824e07d03c99b3837222ea56a2d3cd568d270eced8e00cb471"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.11/pitf_0.1.11_darwin_arm64.tar.gz"
+      sha256 "326996eec5564b287dde5e1dc13d7cc1a9c7dfd401e3c685ddf9650272cca66b"
 
       define_method(:install) do
         bin.install "pitf"
@@ -31,16 +31,16 @@ class Pitf < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.10/pitf_0.1.10_linux_amd64.tar.gz"
-      sha256 "0ed8cca3e9550ad6c85a96939b81e9508e7837e039b5de5e66be876e215ddbe2"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.11/pitf_0.1.11_linux_amd64.tar.gz"
+      sha256 "22bd568cb886b2b2ecd318ef71899790a777cb3593bee15e9284aa81eb8eadde"
       define_method(:install) do
         bin.install "pitf"
         generate_completions_from_executable(bin/"pitf", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/erewhon/pitf/releases/download/v0.1.10/pitf_0.1.10_linux_arm64.tar.gz"
-      sha256 "2ee1968c0d25559efc82ddc4b9a88a2737118f057387ddf18d883d0402a2c0c5"
+      url "https://github.com/erewhon/pitf/releases/download/v0.1.11/pitf_0.1.11_linux_arm64.tar.gz"
+      sha256 "df0c82304d0a0e123f9ae8f042937c61ce2cbf7dfff3e996de3650a7d6c6ed85"
       define_method(:install) do
         bin.install "pitf"
         generate_completions_from_executable(bin/"pitf", "completion")
